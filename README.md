@@ -12,7 +12,3 @@ This repository uses **Git LFS** to store model weights.
 
 To clone the repository with all large files included, install Git LFS first:
 
-```bash
-git lfs install
-git clone <your-repo-url>
-
