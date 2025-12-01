@@ -10,5 +10,5 @@ Run only the infer.py script to run an inference
 
 This repository uses **Git LFS** to store model weights.
 
-To clone the repository with all large files included, install Git LFS first:
+To clone the repository with all large files included, install Git LFS first.
 
