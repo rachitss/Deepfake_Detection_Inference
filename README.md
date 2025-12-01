@@ -1,4 +1,4 @@
-### About
+## About
 
 The project uses a model based on swin tiny transformer, trained on a small DFDC sample dataset to predict if a video is fake or real.
 
