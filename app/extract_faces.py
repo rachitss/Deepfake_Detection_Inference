@@ -69,39 +69,6 @@ class FaceExtractor:
 
         v_cap.release()
 
-
-
-def get_frames():
-    VID_PATH = get_video()
-    TMP_DIR = 'MTCNN EXTRACTED/'
-
-    # os.makedirs(VID_PATH, exist_ok=True)
-    os.makedirs(TMP_DIR, exist_ok=True)
-
-
-    SCALE = 0.25
-    N_FRAMES = None
-
-    # Load face detector
-    face_detector = MTCNN(margin=14, keep_all=True, factor=0.5, device=device).eval()
-
-    # Define face extractor
-    face_extractor = FaceExtractor(detector=face_detector, n_frames=N_FRAMES, resize=SCALE)
-
-    with torch.no_grad():
-        file_name = VID_PATH.split('/')[-1]
-
-        save_dir = os.path.join(TMP_DIR, file_name.split(".")[0])
-
-        if not os.path.exists(save_dir):
-            os.makedirs(save_dir)
-
-        # Detect all faces appear in the video and save them.
-        face_extractor(VID_PATH, save_dir)
-        
-        return save_dir
-
-
 def get_frames(video_path: str, tmp_root: str = 'MTCNN_EXTRACTED') -> str:
     """Extract faces from the provided video path into a temp directory."""
     os.makedirs(tmp_root, exist_ok=True)
