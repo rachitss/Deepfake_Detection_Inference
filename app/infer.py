@@ -76,11 +76,12 @@ def run_inference(
                 pred_classes.extend(pred.cpu().numpy().flatten().tolist())
 
         pred = int(sum(pred_classes) > len(pred_classes) / 2)
+        probability = sum(probabs) / len(probabs) if probabs else 0.0
         return {
             'video_path': video_path,
             'prediction': pred,
             'frame_count': len(image_files),
-            'probabilities': probabs,
+            'probability': probability,
         }
     finally:
         shutil.rmtree(frame_dir, ignore_errors=True)
@@ -96,6 +97,7 @@ def main():
     print('\n--------------Result------------------')
     print(f"Video: {result['video_path']}")
     print(f"Predicted class: {result['prediction']}")
+    print(f"Probability: {result['probability']:.4f}")
 
 
 if __name__ == '__main__':

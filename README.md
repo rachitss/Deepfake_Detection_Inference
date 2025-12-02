@@ -17,10 +17,10 @@ python -m app.infer --video path/to/video.mp4 --model-path swin_tiny.pth
 **FastAPI service**
 
 1. `pip install -r requirements.txt`
-2. `uvicorn app.api_service:app --host 0.0.0.0 --port 8000`
+2. `python run_api.py`
 3. Open `http://localhost:8000/docs`, choose `POST /inference`, upload a video (MP4/MOV/AVI/MKV), and execute the request. The service stores the upload in a temporary file, extracts faces, runs the transformer model, and returns a JSON response. All temporary assets are deleted after each request.
 
-The legacy Tkinter drag-and-drop flow has been commented out so uploads always pass through the CLI or FastAPI surface.
+Responses contain `prediction` (0 real / 1 fake) and `probability`, which averages all sigmoid confidences collected across batches. The legacy Tkinter drag-and-drop flow has been commented out so uploads always pass through the CLI or FastAPI surface.
 
 ### Python version
 
