@@ -16,8 +16,7 @@ def main():
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")   
 
-    base = "D:/W/VS/VS Folder/DFD/DFD-T"
-    model_path = f'{base}/swin_tiny.pth'
+    model_path = 'swin_tiny.pth'
 
 
 
