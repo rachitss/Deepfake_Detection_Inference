@@ -12,12 +12,13 @@ Run only the infer.py script to run an inference
 
 ### Python version
 
-The codebase targets **Python 3.13.2**. Use this interpreter locally (pyenv/virtualenv/uv).
+The scripts rely on **Python 3.13.2**. Other python versions might cause compatibility errors.
 
 ### Large Files (Git LFS)
 
 This repository uses **Git LFS** to store model weights.
 
 To clone the repository with all large files included, install Git LFS first.
+
 
 
