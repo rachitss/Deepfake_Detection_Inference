@@ -4,7 +4,7 @@ The project uses a model based on swin tiny transformer, trained on a small DFDC
 
 ### API service branch
 
-Work on the `api-service` branch focuses on exposing the inference pipeline as a FastAPI service so external clients can submit video paths/URIs instead of relying on the desktop GUI. Keep changes isolated to this branch before merging to `main`.
+Work on the `api-service` branch focuses on exposing the inference pipeline as a FastAPI service so external clients can submit video paths/URIs instead of relying on the desktop GUI.
 
 ### How to run inference
 
@@ -19,4 +19,5 @@ The codebase targets **Python 3.13.2**. Use this interpreter locally (pyenv/virt
 This repository uses **Git LFS** to store model weights.
 
 To clone the repository with all large files included, install Git LFS first.
+
 
